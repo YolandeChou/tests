@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+/*index*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+body{font-size:12px;}
+img{border:none;}
+li{list-style:none;}
+input,select,textarea{outline:none;}
+textarea{resize:none;}
+a{text-decoration:none;}
+
+/*共用代码*/
+.floLeft{
+	float:left;
+}
+.floRight{
+	float:right;
+}
+/*顶部条*/
+.topper{
+	width:100%;
+	height:100px;
+	background-color:#f3f3f3;
+}
+.topperBox{
+	width:1000px;
+	margin:0 auto;
+}
+.topperLif{
+	font:34px "华文仿宋";
+	color:#43181a;
+	line-height:100px;
+	
+}
+.topperRig li{
+	float:left;
+}
+.topperRig li a{
+	color:#411905;
+	font:18px "微软雅黑";
+	margin-left:70px;
+	line-height:100px;
+}
+/*图标,二维码*/
+.logoIma{
+	height:600px;
+	position:relative;
+}
+.logoIma span{
+	position:absolute;
+	width:158px;
+	height:158px;
+	bottom:33px;
+	right:44opx;
+}
+
+

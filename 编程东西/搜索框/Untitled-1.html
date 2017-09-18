@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>BiYing</title>
+<style type="text/css">
+body{
+	background-color:#333;
+	background-image: url(river.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.logo{
+	background-image:url(logo.png);
+	width:107px;
+	height:53px;
+	float:left;
+	margin:-14px 10px 0 0;
+}
+form{
+	float:left;
+	background-color:#fff;
+	border:none;
+	padding:5px;
+}
+.search-text{
+	border:none;
+	height:25px;
+	line-height:25px;
+	width:350px;
+	float:left;
+	outline:none;
+}
+.search-submit{
+	background:url(search-button.png) no-repeat;
+	width:29px;
+	height:29px;
+	border:none;
+	float:left;
+	
+}
+.box{
+	position:absolute;
+	top:200px;
+	left:300px;
+}
+.nav{
+	background-color:#fff;
+	width:391px;
+	margin:0 auto;
+	position:absolute;
+}
+.nav ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.nav ul li{
+	margin:0;
+	line-height:25px;
+	padding:0;
+}
+.nav ul li:hover{
+	background-color:#ccc;
+}
+</style>
+</head>
+
+<body>
+<div class='box'>
+ <div class="logo">
+ </div>
+ <form id='search-form'>
+   <input type="text" class="search-text" id="search-text"/>
+   <input type="submit" class="search-submit" value="" id="search-submit"/>
+ </form>
+ </div>
+ 
+ <div class="nav" id="search-suggest">
+  <ul>
+   <li>search1</li>
+   <li>search2</li>
+  </ul>
+ </div>
+ 
+ 
+ <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+ <script>
+ $("#search-suggest").css({
+	 top:$("#search-form").offset().top+$("#search-form").height()+10,
+	 left:$("#search-form").offset().left
+ })
+ </script>
+</body>
+</html>

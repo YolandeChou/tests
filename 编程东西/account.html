@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+ fieldset{
+	 width:216px;}
+ fieldset ol{
+	 list-style:none;
+	 padding:0;
+	 margine:2px;}
+ fieldset ol li{
+	 margin:0 0 9px 0;
+	 padding:0}
+ fieldset input{
+	 display:block;}
+</style>
+</head>
+
+<body>
+ <form id="create_account" action="/signup" method="post">
+ <fieldset id="signup">
+  <legend>Create New Account</legend>
+  <ol>
+   <li>
+    <label for="first_name">First Name</label>
+    <input id="first_name" type="text" name="first_name" autofocus=ture placeholder="'Join'" />
+   </li>
+   <li>
+   <label for="last_name">Last Name</label>
+   <input id="last_name" name="last_name" type="text" placeholder="'Smith'" />
+   </li>
+   <li>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="user@example.com" />
+   </li>
+   <li>
+    <label for+"password">Password</label>
+    <input id="password" type="password" name="password" value="" autocomplete="off" placeholder="8-10 characters" />
+   </li>
+   <li>
+    <label for="password_confirmation">Password Confirmation</label>
+    <input id="password_confirmation" type="password" name="password_confirmation" value="" autocomplete="off" placeholder="Type your password again" />
+   </li>
+  </ol>
+  </fieldset>
+ </form>
+</body>
+</html>

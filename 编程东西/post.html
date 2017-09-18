@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style typr="text/css">
+ol{
+	line-height:30px;}
+</style>
+</head>
+
+<body>
+<form method="post" action="/project/1">
+  <fieldset id="personal1_information">
+    <legend>Project Information</legend>
+    <ol>
+      <li>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" autofocus />
+      </li>
+      <li>
+       <label for="priority">Priority</label>
+       <input type="range" name="priority" min="0" max="10" value="0" id= "priority" />
+      </li>
+      <li>
+       <label for="estimated_hours">Estimated hours</label>
+       <input type="number" name="estimated_hours" id="estimated_hours" min="0" max="1000" />
+      </li>
+      <li>
+       <label for="start_date">Start date</label>
+       <input name="start_date" id="start_date" type="date" value="2017-01-01" />
+      </li>
+      <li>
+       <label for="email">Email contact</label>
+       <input name="email" id="email" type="email" />
+      </li>
+      <li>
+       <label for="url">Staging URL</label>
+       <input name="url" id="url" type="url" />
+      </li>
+      <li>
+       <label for="project_color">Project color</label>
+       <input type="color" name="project_color" id="project_color" />
+      </li>
+      <li>
+       <input type="submit" value="Submit" />
+      </li>
+    </ol>
+  </fieldset>
+</form>
+</body>
+</html>

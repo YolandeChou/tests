@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>桌面档</title>
+
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+#demo{
+	position:relative;
+}
+
+.item{
+	padding:15px 0 0  15px;
+	float:left;
+}
+.img{
+	padding:10px;
+	border:1px solid #ccc;
+	box-shadow:0 0 6px #ccc;
+	border-radius:5px;
+}
+.img img{
+	width:162px;
+	height:auto;
+}
+</style>
+</head>
+
+<body>
+<div id='demo'>
+  <div class='item'>
+    <div class='img'><img src="0.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="1.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="2.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="3.jpg" />
+    </div>
+  </div>
+
+  <div class='item'>
+    <div class='img'><img src="4.jpg" />
+    </div>
+  </div>
+
+  <div class='item'>
+    <div class='img'><img src="5.jpg" />
+    </div>
+  </div>
+ 
+ <div class='item'>
+  <div class='img'><img src="6.jpg" />
+  </div>
+</div>
+
+  <div class='item'>
+    <div class='img'><img src="7.jpg" />
+    </div>
+  </div>
+
+  <div class='item'>
+    <div class='img'><img src="8.jpg" />
+    </div>
+  </div>
+
+  <div class='item'>
+    <div class='img'><img src="9.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="10.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="11.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="12.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="13.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="14.jpg" />
+    </div>
+  </div>
+ 
+   <div class='item'>
+    <div class='img'><img src="15.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="16.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="17.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="18.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="19.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="20.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="21.jpg" />
+    </div>
+  </div>
+ 
+  <div class='item'>
+    <div class='img'><img src="22.jpg" />
+    </div>
+  </div>
+ 
+
+</div>
+
+<script>
+window.onload=function(){
+	waterfall('demo','item');
+	var dataInt={'data':[{'src':'23.jpg'},{'src':'24.jpg'},{'src':'25.jpg'},{'src':'26.jpg'},{'src':'27.jpg'},{'src':'28.jpg'},{'src':'29.jpg'},{'src':'30.jpg'},{'src':'31.jpg'},{'src':'32.jpg'},{'src':'33.jpg'},{'src':'34.jpg'},{'src':'35.jpg'},{'src':'36.jpg'},{'src':'37.jpg'},{'src':'38.jpg'},{'src':'39.jpg'},]}
+	window.onscroll=function(){
+		if(checkScroll){
+			var oParent=document.getElementById('demo');
+			for(var i=0;i<dataInt.data.length;i++){
+				var oPin=document.createElement('div');
+				oPin.className='item';
+				oParent.appendChild(oPin);
+				var oBox=document.createElement('div');
+				oBox.className='img';
+				oPin.appendChild(oBox);
+				var img=document.createElement('img');
+				img.src=dataInt.data[i].src;
+				oBox.appendChild(img);
+			}
+			waterfall('demo','item');
+		}
+	}
+}
+function waterfall(parent,cls){
+	var oParent=document.getElementById(parent);
+	var obj=getClassName(oParent,cls);
+	var objW=obj[0].offsetWidth;
+	var num=Math.floor(document.documentElement.clientWidth/objW);
+	oParent.style.cssText='width:'+objW*num+'px;margin:0 auto;';
+	var hArry=[];
+	for(var i=0;i<obj.length;i++){
+		if(i<num){
+			hArry[i]=obj[i].offsetHeight;
+		}else{
+			var minH=Math.min.apply(null,hArry);
+			var index=getminHIndex(hArry,minH);
+			obj[i].style.position='absolute';
+			obj[i].style.top=minH+'px';
+			obj[i].style.left=obj[index].offsetLeft+'px';
+			hArry[index]+=obj[i].offsetHeight;
+		}
+	}
+}
+function getClassName(parent,className){
+	var oElements=[];
+	var clss=[];
+	oElements=parent.getElementsByTagName('*')
+	for(var i=0;i<oElements.length;i++){
+		if(oElements[i].className==className){
+			clss.push(oElements[i]);}
+	};
+	return clss;
+	
+}
+function getminHIndex(arr,minH){
+    for(var i in arr){
+        if(arr[i]==minH){
+            return i;
+        }
+    }
+}
+function checkScroll(){
+	var oParent=documet.getElementById('demo');
+	var oBoxs=getClassName(oParent,'item');
+	var oLast=oBoxs[oBoxs.length-1];
+	var hScroll=document.documentElement.scrollTop||document.body.scrollTop;
+	var hDocument=document.documentElement.clientHeight||document.body.clientHeight;
+	return(oLast.offsetTop+oLast.offsetHeight/2<hScroll+hDocument)?true:false;
+}
+</script>
+</body>
+</html>
